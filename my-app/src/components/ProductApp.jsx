@@ -45,14 +45,14 @@ const ProductApp = () => {
             onChange={onChange}
           />
           <button onClick={(e)=>{
-            e.preventDefault();
-            fetchData;
+            e.preventDefault()
+            fetchData
           }}>Search</button>
         </form>
       </div>
-        {!product?(
+        {(product =='')?(
           <div>
-            <h2>Data Is Incorrect, Please Try Again!</h2>
+            <h2>Data Is Fetching, Please Wait, Or Try Again!</h2>
           </div>
         ):(
           <ProductLists products={product} />
