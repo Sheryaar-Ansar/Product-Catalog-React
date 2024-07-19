@@ -3,12 +3,20 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import ProductApp from './components/ProductApp'
+import ProductNavbar from './components/ProductNavbar'
+import { Routes, Route } from 'react-router-dom'
+import ProductId from './components/ProductId'
+
 
 function App() {
 
   return (
     <>
-      <ProductApp/>
+      <ProductNavbar/>
+      <Routes>
+        <Route path='/' element={<ProductApp/>} />
+        <Route path='/:id' element={<ProductId/>} />
+      </Routes>
     </>
   )
 }
