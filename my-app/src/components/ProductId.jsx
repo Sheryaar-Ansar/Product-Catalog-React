@@ -12,7 +12,6 @@ const ProductId = () => {
     const response = await fetch(url)
     const result = await response.json()
     setData(result)
-    console.log(result);
   }
   useEffect(() => {
     setInterval(()=>{

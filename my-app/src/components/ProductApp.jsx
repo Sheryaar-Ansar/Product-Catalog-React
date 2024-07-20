@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import ProductLists from './ProductLists'
 import './css/Product.css'
+import { BiSearch } from 'react-icons/bi'
+import ProductNavbar from './ProductNavbar'
 
 const ProductApp = () => {
   const [product, setProduct] = useState([])
   const [search, setSearch] = useState('')
+  const [cart, setCart] = useState([])
 
 
   const fetchData = async () => {
@@ -34,20 +37,20 @@ const ProductApp = () => {
   const onChange = (e) => {
     setSearch(e.target.value)
   }
-
+  const handleClick = (product) => {
+    setCart([...cart, product])
+  }
 
   return (
     <div>
+      <ProductNavbar cart={cart.length}/>
       <div className='search-box'>
         <form>
           <input type="text"
             placeholder='Enter Your Product Name'
             onChange={onChange}
           />
-          <button onClick={(e)=>{
-            e.preventDefault()
-            fetchData
-          }}>Search</button>
+          <BiSearch className='search-logo'/>
         </form>
       </div>
         {(product =='')?(
@@ -55,7 +58,7 @@ const ProductApp = () => {
             <h2>Data Is Fetching, Please Wait, Or Try Again!</h2>
           </div>
         ):(
-          <ProductLists products={product} />
+          <ProductLists products={product} numberShow={handleClick}/>
 
         )}
     </div>
