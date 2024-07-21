@@ -10,7 +10,7 @@
 <h3><u>What components I have used in the Project?</u></h3>
 <p>
     <ul>
-        <li>App.jsx (It's the main file where I've Route Home and Recipe Components)</li>
+        <li>App.jsx (It's the main file where I've Route Home and Product Components)</li>
         <li>ProductApp.jsx</li>
         <li>ProductCart.jsx</li>
         <li>ProductList.jsx</li>
